@@ -1418,23 +1418,21 @@
             if (!phoneCheck.valid) { alert(phoneCheck.msg); return; }
             // Anti-spam checks
             var hp=document.getElementById('hp_field');if(hp&&hp.value){return;}
-            var emailCheck=validateEmail(email);if(!emailCheck.valid){alert(emailCheck.msg);return;}
+            var emailVal=document.getElementById('email').value.trim();
+            var emailCheck=validateEmail(emailVal);if(!emailCheck.valid){alert(emailCheck.msg);return;}
             answers.firstName = f;
             answers.lastName = document.getElementById('lastName').value.trim();
-            answers.email = document.getElementById('email').value.trim();
+            answers.email = emailVal;
             answers.phone = p;
             answers.source = 'Simplee Buys - Direct Response';
             Object.assign(answers, utmParams);
-            fetch('[WEBHOOK_URL]', {
+            var webhookURL='[WEBHOOK_URL]';
+            fetch(webhookURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(answers)
-            }).then(() => {
-                window.location.href = '/thank-you';
-            }).catch(error => {
-                console.error('Error:', error);
-                alert('There was an error submitting your information. Please try again.');
-            });
+            }).catch(function(){});
+            setTimeout(function(){window.location.href='/thank-you';},500);
         }
     </script>
 
