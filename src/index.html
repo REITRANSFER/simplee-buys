@@ -1150,10 +1150,21 @@
                     <input type="text" class="input-field" id="propertyAddress" placeholder="123 Main St, City, State" autocomplete="off">
                     <button class="continue-button" onclick="continueAddress()">Get My Offer &#8594;</button>
                 </div>
-                <!-- Step 2: Property type -->
+                <!-- Step 2: Ownership -->
                 <div class="step" data-step="2">
                     <button class="back-button" onclick="goBack()">&#8592; Back</button>
                     <div class="step-number">Step 2 of 8</div>
+                    <h2>What is your relationship to this property?</h2>
+                    <div class="button-group">
+                        <button class="option-button" onclick="selectOption('ownership','Owner')">&#127968; I am the owner</button>
+                        <button class="option-button" onclick="selectOption('ownership','Family member with legal rights')">&#128101; Family member with legal rights to sell</button>
+                        <button class="option-button" onclick="disqualify('ownership','Other')">&#128683; Other</button>
+                    </div>
+                </div>
+                <!-- Step 3: Property type -->
+                <div class="step" data-step="3">
+                    <button class="back-button" onclick="goBack()">&#8592; Back</button>
+                    <div class="step-number">Step 3 of 8</div>
                     <h2>What type of property is it?</h2>
                     <div class="button-group">
                         <button class="option-button" onclick="selectOption('propertyType','Single Family')">&#127968; Single Family Home</button>
@@ -1163,10 +1174,10 @@
                         <button class="option-button" onclick="disqualify('propertyType','Land/Commercial')">&#128683; Land or Commercial Property</button>
                     </div>
                 </div>
-                <!-- Step 3: Condition -->
-                <div class="step" data-step="3">
+                <!-- Step 4: Condition -->
+                <div class="step" data-step="4">
                     <button class="back-button" onclick="goBack()">&#8592; Back</button>
-                    <div class="step-number">Step 3 of 8</div>
+                    <div class="step-number">Step 4 of 8</div>
                     <h2>What's the condition of the home?</h2>
                     <div class="condition-grid">
                         <button class="condition-card" onclick="selectOption('condition','Move-in ready')"><div class="condition-icon">&#127969;</div><div class="condition-label">Move-in Ready</div><div class="condition-sub">No major repairs needed</div></button>
@@ -1174,17 +1185,6 @@
                         <button class="condition-card" onclick="selectOption('condition','Major repairs')"><div class="condition-icon">&#127962;</div><div class="condition-label">Major Repairs</div><div class="condition-sub">Significant work needed</div></button>
                         <button class="condition-card" onclick="selectOption('condition','Severe damage')"><div class="condition-icon">&#9888;&#65039;</div><div class="condition-label">Severe Damage</div><div class="condition-sub">Fire, flood, or structural</div></button>
                     </div>
-                </div>
-                <!-- Step 4: Asking price -->
-                <div class="step" data-step="4">
-                    <button class="back-button" onclick="goBack()">&#8592; Back</button>
-                    <div class="step-number">Step 4 of 8</div>
-                    <h2>What's your asking price or estimated value?</h2>
-                    <div class="price-input-wrap">
-                        <span class="price-prefix">$</span>
-                        <input type="text" class="input-field price-input" id="askingPrice" placeholder="300,000" oninput="formatPrice(this)" inputmode="numeric">
-                    </div>
-                    <button class="continue-button" onclick="continuePrice()">Continue &#8594;</button>
                 </div>
                 <!-- Step 5: Timeline -->
                 <div class="step" data-step="5">
@@ -1379,17 +1379,6 @@
             answers.address = a; currentStep++; showStep(currentStep);
         }
 
-        function continuePrice() {
-            var p = document.getElementById('askingPrice').value.trim();
-            if (!p) { alert('Please enter an asking price or estimated value.'); return; }
-            answers.askingPrice = p; currentStep++; showStep(currentStep);
-        }
-
-        function formatPrice(input) {
-            var v = input.value.replace(/[^0-9]/g, '');
-            if (v) v = parseInt(v, 10).toLocaleString();
-            input.value = v;
-        }
 
         function formatPhone(input) {
             var v = input.value.replace(/\D/g, '');
