@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - [COMPANY_NAME]</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #2b5e8e 0%, #1a3d5f 100%);
+            min-height: 100vh;
+            padding: 24px 16px 48px;
+        }
+
+        .page-wrap {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        /* -- Confirmation Card -- */
+        .confirm-card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px 32px 28px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .check-icon {
+            width: 66px; height: 66px;
+            background: #16a085;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 38px; color: white;
+        }
+
+        .confirm-card h1 {
+            font-size: 26px; color: #1a1a1a;
+            margin-bottom: 10px; line-height: 1.3;
+        }
+
+        .confirm-card .lead {
+            font-size: 16px; color: #555;
+            margin-bottom: 20px;
+        }
+
+        .next-steps {
+            background: #f0f7f4;
+            border-left: 4px solid #16a085;
+            padding: 16px 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 18px;
+        }
+
+        .next-steps h3 {
+            font-size: 15px; font-weight: 700;
+            color: #1a1a1a; margin-bottom: 10px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .next-steps ul { list-style: none; }
+
+        .next-steps li {
+            font-size: 14px; color: #333;
+            margin-bottom: 7px;
+            padding-left: 22px; position: relative;
+        }
+
+        .next-steps li:before {
+            content: '\2713';
+            position: absolute; left: 0;
+            color: #16a085; font-weight: 700;
+        }
+
+        .phone-cta { font-size: 15px; color: #666; }
+        .phone-cta a { color: #2b5e8e; font-weight: 700; text-decoration: none; }
+        .phone-cta a:hover { text-decoration: underline; }
+
+        /* -- Info Box (While You Wait) -- */
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 28px 28px 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .info-box {
+            padding: 0;
+        }
+
+        .info-box h3 {
+            font-size: 21px;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .info-box li:before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #16a085;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .info-box a {
+            color: #2b5e8e;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .info-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* -- Mobile -- */
+        @media (max-width: 700px) {
+            .info-card { padding: 20px 16px 24px; }
+            .confirm-card { padding: 28px 20px 22px; }
+            .confirm-card h1 { font-size: 21px; }
+            .info-box h3 { font-size: 18px; }
+        }
+    
+        /* Placeholder Styles */
+        .placeholder-box {
+            background: #f0f2f5;
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px 0;
+            color: #999;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .placeholder-box .placeholder-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .placeholder-box .placeholder-label {
+            display: block;
+            font-size: 13px;
+            color: #bbb;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .placeholder-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #e0e4e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #999;
+            flex-shrink: 0;
+        }
+        .placeholder-logo {
+            height: 40px;
+            background: #e0e4e8;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            color: #999;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <!-- PLACEHOLDER: Add client's Facebook Pixel here -->
+    <!-- [FB_PIXEL_ID] -->
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- -- Confirmation Header -- -->
+    <div class="confirm-card">
+        <div class="check-icon">&#10003;</div>
+        <h1>We're On It! Your Cash Offer is Coming Within 24 Hours.</h1>
+        <p class="lead">The [COMPANY_NAME] team has received your information and is reviewing your property now.</p>
+        <div class="next-steps">
+            <h3>What Happens Next:</h3>
+            <ul>
+                <li>We'll review comparable sales in your area</li>
+                <li>We'll prepare a REAL cash offer, no bait-and-switch</li>
+                <li>You'll receive our offer within 24 hours via email and phone</li>
+                <li>Our number won't change after "inspection", we mean what we say</li>
+            </ul>
+        </div>
+        <p class="phone-cta">Questions? Call us at <a href="tel:[PHONE]">[PHONE]</a> &nbsp;|&nbsp; [COMPANY_NAME] &#8226; Serving [STATE] since 2014</p>
+    </div>
+
+    <!-- -- While You Wait Section -- -->
+    <div class="info-card">
+        <div class="info-box">
+            <h3>While You Wait:</h3>
+            <ul>
+                <li>Check your email for a confirmation from our team</li>
+                <li>Gather any documents related to your property (mortgage statements, tax records, repair estimates)</li>
+                <li>Think about your ideal timeline, we'll work around YOUR schedule</li>
+                <li>Save our number: <a href="tel:[PHONE]">[PHONE]</a>, call or text anytime</li>
+            </ul>
+        </div>
+    </div>
+
+</div><!-- end page-wrap -->
+</body>
+</html>
