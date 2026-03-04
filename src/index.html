@@ -377,7 +377,7 @@
         /* Stats */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
             margin: 24px 0;
             text-align: center;
@@ -928,8 +928,21 @@
     </style>
 
     <!-- Meta Pixel Code -->
-    <!-- PLACEHOLDER: Add client's Facebook Pixel here -->
-    <!-- [FB_PIXEL_ID] -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '25929490186703344');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=25929490186703344&ev=PageView&noscript=1"
+    /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
 <body>
@@ -940,11 +953,6 @@
             <h1>Cash Buyers Are Using This "Inspection Trick" to Steal $50K-$150K From Sellers.. Here's How to Stop It</h1>
             <p class="subheadline">Local homebuyer with 12+ years experience exposes the bait-and-switch tactic that's costing Arizona sellers a fortune. And reveals the ONE question that stops it cold.</p>
             <p class="author-line">By Evan Pfirrman | Simplee Buys | 7-min read</p>
-        </div>
-
-        <!-- Main Video -->
-        <div style="margin: 18px 0;">
-            <img src="images/handshake.jpeg" alt="Evan Pfirrman with homeowners" style="width:100%;border-radius:8px;display:block;">
         </div>
 
         <!-- IMMEDIATE CTA (Bold Guarantee) -->
@@ -1240,7 +1248,7 @@
                     <div class="result-message">
                         <div class="result-icon">&#9989;</div>
                         <h3>You're all set!</h3>
-                        <p>We'll call you within 24 hours with a real offer. No obligation, no pressure.<br><br>Questions? Call us directly: <strong><a href="tel:(XXX) XXX-XXXX" style="color:#15aef0;text-decoration:none;">(XXX) XXX-XXXX</a></strong></p>
+                        <p>We'll call you within 24 hours with a real offer. No obligation, no pressure.<br><br>Questions? Call us directly: <strong><a href="tel:(520) 462-0521" style="color:#15aef0;text-decoration:none;">(520) 462-0521</a></strong></p>
                     </div>
                 </div>
                 <!-- Disqualified -->
@@ -1248,7 +1256,7 @@
                     <div class="result-message">
                         <div class="result-icon">&#128222;</div>
                         <h3>We may still be able to help.</h3>
-                        <p>Our team specializes in unique situations. Call us directly and we'll tell you honestly what your options are.<br><br><strong><a href="tel:(XXX) XXX-XXXX" style="color:#15aef0;text-decoration:none;">(XXX) XXX-XXXX</a></strong></p>
+                        <p>Our team specializes in unique situations. Call us directly and we'll tell you honestly what your options are.<br><br><strong><a href="tel:(520) 462-0521" style="color:#15aef0;text-decoration:none;">(520) 462-0521</a></strong></p>
                     </div>
                 </div>
                 <!-- Out of Service Area -->
@@ -1256,7 +1264,7 @@
                     <div class="result-message">
                         <div class="result-icon">&#128205;</div>
                         <h3>Outside Our Service Area</h3>
-                        <p>Sorry, we currently only purchase properties in the greater Tucson area (Pima and Pinal County).<br><br>If you think this is a mistake, call us: <strong><a href="tel:(XXX) XXX-XXXX" style="color:#15aef0;text-decoration:none;">(XXX) XXX-XXXX</a></strong></p>
+                        <p>Sorry, we currently only purchase properties in the greater Tucson area (Pima and Pinal County).<br><br>If you think this is a mistake, call us: <strong><a href="tel:(520) 462-0521" style="color:#15aef0;text-decoration:none;">(520) 462-0521</a></strong></p>
                     </div>
                 </div>
             </div>
@@ -1411,7 +1419,7 @@
             answers.phone = p;
             answers.source = 'Simplee Buys - Direct Response';
             Object.assign(answers, utmParams);
-            var webhookURL='[WEBHOOK_URL]';
+            var webhookURL='https://n8n.srv1197128.hstgr.cloud/webhook/c868f555-9d2f-4dbb-a0cb-ca280bb3ebfc';
             fetch(webhookURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
